@@ -6,27 +6,27 @@ use O3Co\Query\Query\Term;
  * CompositeExpression 
  *   
  * @uses Expression
- * @package { PACKAGE }
+ * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
- * @license { LICENSE }
+ * @license MIT
  */
 abstract class CompositeExpression extends AbstractTerm implements Expression
 {
-	/**
-	 * terms 
-	 * 
-	 * @var mixed
-	 * @access private
-	 */
-	private $terms;
+    /**
+     * terms 
+     * 
+     * @var mixed
+     * @access private
+     */
+    private $terms;
 
-	public function __construct(array $terms = array())
-	{
-		foreach($terms as $term) {
-			$this->add($term);
-		}
-	}
+    public function __construct(array $terms = array())
+    {
+        foreach($terms as $term) {
+            $this->add($term);
+        }
+    }
 
     /**
      * getFirstTerm 
@@ -61,24 +61,24 @@ abstract class CompositeExpression extends AbstractTerm implements Expression
     {
         $this->terms = array();
 
-		foreach($terms as $term) {
-			$this->add($term);
-		}
+        foreach($terms as $term) {
+            $this->add($term);
+        }
         return $this;
     }
 
-	/**
-	 * add 
-	 * 
-	 * @param Expression $term 
-	 * @access public
-	 * @return void
-	 */
-	public function add(Expression $term)
-	{
-		$this->terms[] = $term;
-		return $this;
-	}
+    /**
+     * add 
+     * 
+     * @param Expression $term 
+     * @access public
+     * @return void
+     */
+    public function add(Expression $term)
+    {
+        $this->terms[] = $term;
+        return $this;
+    }
 
     public function getExpressions()
     {

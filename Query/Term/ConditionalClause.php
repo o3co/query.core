@@ -8,28 +8,28 @@ use O3Co\Query\Query\Term\ConditionalExpression;
  * ConditionalClause 
  *   ConditionalClause bind all internal terms with AND op
  * @uses AbstractClause
- * @package { PACKAGE }
+ * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
- * @license { LICENSE }
+ * @license MIT
  */
 class ConditionalClause extends AbstractClause 
 {
-	/**
-	 * add 
-	 * 
-	 * @param Term $term 
-	 * @access public
-	 * @return void
-	 */
-	public function add(Term $term)
-	{
-		if(!$term instanceof ConditionalExpression) {
-			throw new \RuntimeException('ConditionalClause only accept ConditionalExpression for its term');
-		}
+    /**
+     * add 
+     * 
+     * @param Term $term 
+     * @access public
+     * @return void
+     */
+    public function add(Term $term)
+    {
+        if(!$term instanceof ConditionalExpression) {
+            throw new \RuntimeException('ConditionalClause only accept ConditionalExpression for its term');
+        }
 
-		return parent::add($term);
-	}
+        return parent::add($term);
+    }
 
     /**
      * getFirstExpression 

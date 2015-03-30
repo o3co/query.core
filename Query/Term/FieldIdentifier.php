@@ -6,32 +6,32 @@ use O3Co\Query\Query\Term;
 /**
  * FieldIdentifier 
  * 
- * @package { PACKAGE }
+ * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
- * @license { LICENSE }
+ * @license MIT
  */
 class FieldIdentifier implements Term
 {
-	/**
-	 * name
-	 * 
-	 * @var string
-	 * @access private
-	 */
-	private $name;
+    /**
+     * name
+     * 
+     * @var string
+     * @access private
+     */
+    private $name;
 
-	/**
-	 * __construct 
-	 * 
-	 * @param string $name
-	 * @access public
-	 * @return void
-	 */
-	public function __construct($name)
-	{
-		$this->name = $name;
-	}
+    /**
+     * __construct 
+     * 
+     * @param string $name
+     * @access public
+     * @return void
+     */
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
     
     /**
      * getName 

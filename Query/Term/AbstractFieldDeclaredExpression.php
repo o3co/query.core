@@ -7,35 +7,35 @@ namespace O3Co\Query\Query\Term;
  * @uses AbstractTerm
  * @uses Expression
  * @abstract
- * @package { PACKAGE }
+ * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
- * @license { LICENSE }
+ * @license MIT
  */
 abstract class AbstractFieldDeclaredExpression extends AbstractTerm implements FieldDeclaredExpression 
 {
-	/**
-	 * field 
-	 * 
-	 * @var mixed
-	 * @access protected
-	 */
-	protected $field;
+    /**
+     * field 
+     * 
+     * @var mixed
+     * @access protected
+     */
+    protected $field;
 
-	/**
-	 * __construct 
-	 * 
-	 * @param mixed $field 
-	 * @access public
-	 * @return void
-	 */
-	public function __construct($field)
-	{
+    /**
+     * __construct 
+     * 
+     * @param mixed $field 
+     * @access public
+     * @return void
+     */
+    public function __construct($field)
+    {
         if(is_string($field)) {
             $field = new FieldIdentifier($field);
         }
-		$this->field = $field;
-	}
+        $this->field = $field;
+    }
     
     /**
      * getField 
