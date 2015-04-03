@@ -1,6 +1,8 @@
 <?php
 namespace O3Co\Query\Query;
 
+use O3Co\Query\Query\Expr\Part;
+
 /**
  * Visitor 
  *   Visitor is an interface of visitor classes which create NativeQuery 
@@ -13,10 +15,10 @@ interface Visitor
 {
     /**
      * visit 
-     *   visit Query Term 
-     * @param Term $term 
+     *   visit Query Part 
+     * @param Part $part 
      * @access public
      * @return void
      */
-    function visit(Term $term);
+    function visit(Expr\Part $part);
 }

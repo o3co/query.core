@@ -1,20 +1,20 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 
 /**
  * ValueIdentifier
  *   Value identifier hold the value as parsed, php value.
  *   Ex)  array('foo', 'bar') is still a Value of identifier. 
  *        We do not parse as Collection[Value('foo'), Value('bar')] like AST does
- * @uses AbstractTerm
+ * @uses AbstractPart
  * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-class ValueIdentifier extends AbstractTerm 
+class ValueIdentifier extends AbstractPart 
 {
     /**
      * value 

@@ -1,12 +1,12 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
-use O3Co\Query\Query\Term\ConditionalExpression;
+use O3Co\Query\Query\Expr;
+use O3Co\Query\Query\Expr\ConditionalExpression;
 
 /**
  * ConditionalClause 
- *   ConditionalClause bind all internal terms with AND op
+ *   ConditionalClause bind all internal parts with AND op
  * @uses AbstractClause
  * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
@@ -18,17 +18,17 @@ class ConditionalClause extends AbstractClause
     /**
      * add 
      * 
-     * @param Term $term 
+     * @param Part $part 
      * @access public
      * @return void
      */
-    public function add(Term $term)
+    public function add(Expr\Part $part)
     {
-        if(!$term instanceof ConditionalExpression) {
-            throw new \RuntimeException('ConditionalClause only accept ConditionalExpression for its term');
+        if(!$part instanceof ConditionalExpression) {
+            throw new \RuntimeException('ConditionalClause only accept ConditionalExpression for its part');
         }
 
-        return parent::add($term);
+        return parent::add($part);
     }
 
     /**
@@ -39,7 +39,7 @@ class ConditionalClause extends AbstractClause
      */
     public function getFirstExpression()
     {
-        return $this->getTerms()[0];
+        return $this->getParts()[0];
     }
 
     /**
@@ -50,11 +50,11 @@ class ConditionalClause extends AbstractClause
      */
     public function getExpressions()
     {
-        return $this->getTerms();
+        return $this->getParts();
     }
 
     public function setExpressions(array $exprs)
     {
-        $this->setTerms($exprs);
+        $this->setParts($exprs);
     }
 }

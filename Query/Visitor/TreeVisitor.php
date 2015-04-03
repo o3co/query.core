@@ -2,7 +2,7 @@
 namespace O3Co\Query\Query\Visitor;
 
 use O3Co\Query\Query\Visitor;
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 
 /**
  * TreeVisitor 
@@ -24,13 +24,13 @@ class TreeVisitor implements Visitor
         }
     }
 
-    public function visit(Term $expr)
+    public function visit(Expr\Part $expr)
     {
         //
         return $expr->dispatch($this);
     }
 
-    public function visitStatement(Term\Statement $statement)
+    public function visitStatement(Expr\Statement $statement)
     {
         foreach($this->visitors as $visitor) {
             $statement->dispatch($visitor);
@@ -42,22 +42,22 @@ class TreeVisitor implements Visitor
         }
     }
 
-    public function visitConditionalClause(Term\ConditionalClause $clause)
+    public function visitConditionalClause(Expr\ConditionalClause $clause)
     {
         foreach($this->visitors as $visitor) {
             $clause->dispatch($visitor);
         }
     }
 
-    public function visitLimitClause(Term\LimitClause $limit)
+    public function visitLimitClause(Expr\LimitClause $limit)
     {
     }
 
-    public function visitOffsetClause(Term\OffsetClause $offset)
+    public function visitOffsetClause(Expr\OffsetClause $offset)
     {
     }
 
-    public function visitOrderClause(Term\OrderClause $order)
+    public function visitOrderClause(Expr\OrderClause $order)
     {
     }
     

@@ -1,18 +1,17 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
+
+use O3Co\Query\Query\Expr;
 
 /**
- * LimitClause 
+ * Expression 
  * 
- * @uses ValueIdentifier
- * @uses Clause
+ * @uses Part
  * @package \O3Co\Query
  * @copyright Copyrights (c) 1o1.co.jp, All Rights Reserved.
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-class LimitClause extends ValueIdentifier implements Clause
+interface Expression extends Part
 {
-
 }
-

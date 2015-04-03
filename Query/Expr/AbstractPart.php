@@ -1,11 +1,11 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 use O3Co\Query\Query\Visitor;
 
 /**
- * AbstractTerm 
+ * AbstractPart 
  * 
  * @abstract
  * @package \O3Co\Query
@@ -13,7 +13,7 @@ use O3Co\Query\Query\Visitor;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-abstract class AbstractTerm implements Term
+abstract class AbstractPart implements Part
 {
     /**
      * __get 

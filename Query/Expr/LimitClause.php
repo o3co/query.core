@@ -1,8 +1,8 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
 /**
- * OffsetClause 
+ * LimitClause 
  * 
  * @uses ValueIdentifier
  * @uses Clause
@@ -11,7 +11,7 @@ namespace O3Co\Query\Query\Term;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-class OffsetClause extends ValueIdentifier implements Clause
+class LimitClause extends ValueIdentifier implements Clause
 {
 
 }

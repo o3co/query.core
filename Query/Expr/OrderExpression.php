@@ -1,5 +1,5 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
 /**
  * OrderExpression 

@@ -1,7 +1,7 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 
 /**
  * FieldIdentifier 
@@ -11,7 +11,7 @@ use O3Co\Query\Query\Term;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-class FieldIdentifier implements Term
+class FieldIdentifier implements Part
 {
     /**
      * name

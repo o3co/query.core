@@ -1,10 +1,10 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
 /**
  * AbstractFieldConditionExpression 
  * 
- * @uses AbstractTerm
+ * @uses AbstractPart
  * @uses Expression
  * @abstract
  * @package \O3Co\Query
@@ -12,7 +12,7 @@ namespace O3Co\Query\Query\Term;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-abstract class AbstractFieldDeclaredExpression extends AbstractTerm implements FieldDeclaredExpression 
+abstract class AbstractFieldDeclaredExpression extends AbstractPart implements FieldDeclaredExpression 
 {
     /**
      * field 

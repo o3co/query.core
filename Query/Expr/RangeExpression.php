@@ -1,5 +1,5 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
 /**
  * Range 
@@ -52,9 +52,9 @@ class RangeExpression extends AbstractFieldDeclaredExpression implements Conditi
         }
         
         if(!$minComparison) {
-            $minComparison = new Term\ComparisonExpression($field, null, Term\ComparisonExpression::BIT_VALUE_ANY | Term\ComparisonExpression::EQ );
+            $minComparison = new Expr\ComparisonExpression($field, null, Expr\ComparisonExpression::BIT_VALUE_ANY | Expr\ComparisonExpression::EQ );
         } else if(!$maxComparison) {
-            $maxComparison = new Term\ComparisonExpression($field, null, Term\ComparisonExpression::BIT_VALUE_ANY | Term\ComparisonExpression::EQ );
+            $maxComparison = new Expr\ComparisonExpression($field, null, Expr\ComparisonExpression::BIT_VALUE_ANY | Expr\ComparisonExpression::EQ );
         }
 
         $this->setMinComparison($minComparison);

@@ -1,7 +1,7 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 
 /**
  * AbstractClause 
@@ -13,57 +13,57 @@ use O3Co\Query\Query\Term;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-abstract class AbstractClause extends AbstractTerm implements Clause, MultiExpressionPart
+abstract class AbstractClause extends AbstractPart implements Clause, MultiExpressionPart
 {
     /**
-     * terms 
+     * parts 
      * 
      * @var mixed
      * @access private
      */
-    private $terms;
+    private $parts;
 
     /**
      * __construct 
      * 
-     * @param array $terms 
+     * @param array $parts 
      * @access public
      * @return void
      */
-    public function __construct(array $terms = array()) 
+    public function __construct(array $parts = array()) 
     {
-        $this->terms = array();
-        foreach($terms as $term) {
-            $this->add($term);
+        $this->parts = array();
+        foreach($parts as $part) {
+            $this->add($part);
         }
     }
 
     /**
-     * getTerms 
+     * getParts 
      * 
      * @access public
      * @return void
      */
-    public function getTerms()
+    public function getParts()
     {
-        return $this->terms;
+        return $this->parts;
     }
 
     /**
      * add 
      * 
-     * @param Term $term 
+     * @param Part $part 
      * @access public
      * @return void
      */
-    public function add(Term $term)
+    public function add(Expr\Part $part)
     {
-        $this->terms[] = $term;
+        $this->parts[] = $part;
     }
 
     public function getExpressions()
     {
-        return $this->getTerms();
+        return $this->getParts();
     }
 
     public function addExpression(Expression $expr)

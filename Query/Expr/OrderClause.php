@@ -1,7 +1,7 @@
 <?php
-namespace O3Co\Query\Query\Term;
+namespace O3Co\Query\Query\Expr;
 
-use O3Co\Query\Query\Term;
+use O3Co\Query\Query\Expr;
 
 /**
  * OrderClause 
@@ -12,7 +12,7 @@ use O3Co\Query\Query\Term;
  * @author Yoshi<yoshi@1o1.co.jp> 
  * @license MIT
  */
-class OrderClause extends AbstractTerm implements Clause, MultiExpressionPart
+class OrderClause extends AbstractPart implements Clause, MultiExpressionPart
 {
     private $expressions = array();
     
@@ -52,7 +52,7 @@ class OrderClause extends AbstractTerm implements Clause, MultiExpressionPart
     public function addExpression(Expression $expr)
     {
         if(!$expr instanceof OrderExpression) {
-            throw new \InvalidArgumentException('OrderClause only accept OrderExpression as its term.');
+            throw new \InvalidArgumentException('OrderClause only accept OrderExpression as its part.');
         }
 
         // internal Expression has to be an unique by field 
